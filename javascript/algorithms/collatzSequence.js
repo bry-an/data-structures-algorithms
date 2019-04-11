@@ -3,7 +3,7 @@ function countCollatz(num) {
     collatz(num)
 
     function collatz(num) {
-        if (num === 0) {
+        if (num <= 0) {
             return true
         }
         if (num === 1) {
@@ -21,7 +21,7 @@ function countCollatz(num) {
     }
     return count
 }
-console.log(countCollatz(1))
+console.log(countCollatz(-1))
 console.log(countCollatz(18382))
 console.log(countCollatz(18383))
 // statement is true for 1; statement is true for k=18382; statement is true for
