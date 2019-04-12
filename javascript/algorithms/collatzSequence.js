@@ -21,7 +21,7 @@ function countCollatz(num) {
     }
     return count
 }
-console.log(countCollatz(-1))
+console.log(countCollatz(1))
 console.log(countCollatz(18382))
 console.log(countCollatz(18383))
 // statement is true for 1; statement is true for k=18382; statement is true for
@@ -29,7 +29,7 @@ console.log(countCollatz(18383))
 
 function bonus() {
     let largest = 0
-    for (let i = 0; i < 1000000; i++) {
+    for (let i = 0; i <= 1000000; i++) {
         const result = countCollatz(i)
         if (result > largest) {
             largest = result
