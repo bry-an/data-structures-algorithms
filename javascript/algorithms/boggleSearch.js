@@ -15,10 +15,9 @@ const checkIfContained = function (dictionary, board) {
     }
     for (let i = 0; i < dictionary.length; i++) {
         for (let j = 0; j < dictionary[i].length; j++) {
-            if (!flattenedBoard[dictionary[i].charCodeAt(j)])
-            break
+            if (flattenedBoard[dictionary[i].charCodeAt(j)] && j === dictionary[i].length - 1)
+                result.push(dictionary[i])
         }
-        result.push(dictionary[i])
     }
     return result
 }
@@ -26,9 +25,14 @@ const checkIfContained = function (dictionary, board) {
 function boggleSearch(dictionary, board) {
     let indX = 0
     let indY = 0
-    const flattenedBoard = flattenBoard(board)
+    let indWord = 0
+    const results = []
+    dictionary.forEach(word => {
+        if (board[indX][indY] === word[0]) {
+            search(indX, indY, wordInd)
+        }
+    })
+
 
 
 }
-
-console.log(checkIfContained(['hello', 'goodbye'], [['h', 'e'], ['w', 'o', 'l', 'l', 'd']]))
