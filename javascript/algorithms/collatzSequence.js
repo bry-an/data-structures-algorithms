@@ -29,12 +29,14 @@ console.log(countCollatz(18383))
 
 function bonus() {
     let largest = 0
+    let largestNum = 0
     for (let i = 0; i <= 1000000; i++) {
         const result = countCollatz(i)
         if (result > largest) {
             largest = result
+            largestNum = i
         }
     }
-    return largest
+    return `Input ${largestNum} gives the longest sequence of ${largest}`
 }
 console.log(bonus()) // 525
