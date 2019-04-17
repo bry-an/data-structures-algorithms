@@ -28,4 +28,4 @@ function fibBottomUp(num) {
     }
     return memo[num - 1] + memo[num - 2]
 }
-console.log(fibBottomUp(5))
+console.log(fibonacci(0))
