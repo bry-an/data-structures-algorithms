@@ -1,4 +1,4 @@
- class CircularArray {
+export default class CircularArray {
      constructor() {
          this.items = []
          this.count = 0
@@ -41,5 +41,14 @@
              this.push(array[i])
          }
          return this.items
+     }
+     next(index) {
+         return this.peekAt(index + 1)
+     }
+     previous(index) {
+         return this.peekAt(index - 1)
+     }
+     maxSubarraySum() {
+
      }
  }
