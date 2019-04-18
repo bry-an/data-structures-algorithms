@@ -24,9 +24,7 @@ function oneEdit(string1, string2) {
         }
         else return "The two strings are greater than one edit apart"
     }
-    else {
-        return "The two strings are greater than one edit apart"
-    }
+    else return "The two strings are greater than one edit apart"
 }
 
 function findExtraCharacter(longer, shorter) {
