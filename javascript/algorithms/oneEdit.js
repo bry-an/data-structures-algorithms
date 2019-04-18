@@ -61,11 +61,15 @@ function checkSwap(array1, array2) {
         frequency[array2[i].charCodeAt(0)]--
     }
     for (let i = 0; i < frequency.length; i++) {
-        if (frequency[i] < 0) {
-            // 
+        if (frequency[i] !== 0) {
+            // a character exists in one string that doesn't exist in the other
             result.push(String.fromCharCode(i))
         }
     }
     return result
 }
-console.log(oneEdit("ffjjo", "ffffo"))
+console.log(oneEdit("dog", "dog")) // The two strings are identical
+console.log(oneEdit("god", "gold")) // Insert l
+console.log(oneEdit("help", "kelp"))// swap h and k
+console.log(oneEdit("help", "aFriend"))// the two strings are greater than one edit apart
+
