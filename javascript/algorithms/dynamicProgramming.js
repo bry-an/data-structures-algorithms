@@ -28,4 +28,4 @@ function fibBottomUp(num) {
     }
     return memo[num - 1] + memo[num - 2]
 }
-console.log(fibonacci(0))
+console.log(fibonacci(60))
