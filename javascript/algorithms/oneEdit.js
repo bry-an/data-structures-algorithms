@@ -24,6 +24,7 @@ function oneEdit(string1, string2) {
         }
         else return "The two strings are greater than one edit apart"
     }
+    // if their lengths are greater than 1 character apart, oneEdit function returns 'false'
     else return "The two strings are greater than one edit apart"
 }
 
@@ -68,6 +69,7 @@ function checkSwap(array1, array2) {
 }
 console.log(oneEdit("dog", "dog")) // The two strings are identical
 console.log(oneEdit("god", "gold")) // Insert l
+console.log(oneEdit("fffoo", "foooo")) // Insert l
 console.log(oneEdit("help", "kelp"))// swap h and k
 console.log(oneEdit("help", "aFriend"))// the two strings are greater than one edit apart
 
