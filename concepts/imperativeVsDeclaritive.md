@@ -2,9 +2,9 @@
 
 ## Basic definitions
 
-**Declarative programming** expresses the logic of computation without describing its control flow. Languages often cited as declarative examples: C, C++, Java
+**Declarative programming** expresses the logic of computation without describing its control flow. Languages often cited as declarative examples: SQL, HTML
 
-**Imperative programming** uses statements that change a program's state. Languages often cited as imperative examples: SQL, HTML
+**Imperative programming** uses statements that change a program's state. Languages often cited as imperative examples: C, C++, Java
 
 ## Analogy: Make a sandwich
 
