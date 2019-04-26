@@ -18,7 +18,9 @@ export default class CircularArray {
          if (!this.count) {
              return null
          }
-         return this.items[this.count - 1]
+         const selectedItem = this.items[this.count - 1]
+         this.count--
+         return selectedItem
      }
      peekAt(index) {
          if (!index) {
@@ -49,6 +51,31 @@ export default class CircularArray {
          return this.peekAt(index - 1)
      }
      maxSubarraySum() {
-
+         let sum = 0
+         let max = -Infinity
+         let min = Infinity
+         let negCount = 0
+         let negSum = 0
+         for (let i = 0; i < this.count; i++) {
+             const item = this.items[i]
+             if (item < min) {
+                 min = item
+             }
+             if (item > max) {
+                 max = item
+             }
+             if (item < 0) {
+                 negSum += Math.abs(item)
+                 negCount++
+             }
+             sum += item
+         }
+         if (negCount === 0) {
+             return sum
+         }
+         else if (negCount === 1) {
+             return sum + negSum
+         }
+         else return max
      }
  }
