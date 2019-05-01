@@ -12,12 +12,12 @@ function smallestInt(arr) {
         }
         if (arr[i] !== i + 1) {
             console.log("boom", i)
-            result = (arr[i - 1] * (arr[i - 1] + 1)) / 2
+            result = (arr[i - 1] * (arr[i - 1] + 1)) / 2 + 1
         }
-        if (result) {
-            return result
-        }
-        return (arr[arr.length - 1] * (arr[arr.length - 1] + 1)) / 2
     }
+    if (result) {
+        return result
+    }
+    return (arr[arr.length - 1] * (arr[arr.length - 1] + 1)) / 2
 }
-console.log(smallestInt([1, 2, 3, 10]))
+console.log(smallestInt([1, 2, 3, 4, 10]))
