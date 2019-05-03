@@ -1,18 +1,22 @@
 function noAdjRepeatedChars(string) {
     const strArray = string.split("")
     const sorted = strArray.sort()
+    let results = ""
 
-    for (let i = 0; i < strArray.length; i++) {
-        if (strArray[i] === strArray[i + 1]) {
-            let j = i + 1
-            while (strArray[j - 1]) {
-
-            }
+    let i = 0
+    while (sorted.length) {
+        const firstChar = sorted.splice(1, 1)
+        const secondChar = sorted.splice(sorted.length -1, 1)
+        console.log(firstChar, secondChar)
+        if (firstChar[0] === secondChar[0]) {
+            return "None"
         }
+
+        results += firstChar
+        results += secondChar
+        i++
     }
-
-
-
-
+    return results
+    
 }
 console.log(noAdjRepeatedChars("aaaabbc"))
