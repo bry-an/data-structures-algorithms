@@ -7,7 +7,6 @@ function noAdjRepeatedChars(string) {
     while (sorted.length) {
         const firstChar = sorted.splice(1, 1)
         const secondChar = sorted.splice(sorted.length -1, 1)
-        console.log(firstChar, secondChar)
         if (firstChar[0] === secondChar[0]) {
             return "None"
         }
