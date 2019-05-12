@@ -13,11 +13,13 @@ function PrefixMap() {
                 let keepGoing = true
                     for (let i = 0; i < str.length; i++) {
                         if (str[i] !== key[i]) {
+                            console.log("boom", i)
                             keepgoing = false
                             break
                         }
                     }
                     if (keepGoing) {
+                        console.log("keep going")
                         currentSum += value
                     }
             })
@@ -33,6 +35,11 @@ function PrefixMap() {
     }
 }
 
+const premax = PrefixMap()
+premax.insert("kitten", 12)
+premax.insert("kitch", 5)
+premax.insert("wrnston", 5)
+console.log(premax.sum("kit"))
 
 
 
