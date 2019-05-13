@@ -5,7 +5,7 @@ function getHIndex(arr) {
 
     for (let i = 0; i < len; i++) {
         if (len - i <= arr[i]) {
-            result =  arr[i]
+            result = arr[i]
             break
         }
     }
@@ -13,3 +13,4 @@ function getHIndex(arr) {
 }
 
 console.log(getHIndex([4, 3, 0, 1, 5]))
+console.log(getHIndex([0, 1, 0, 0]))
