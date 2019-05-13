@@ -4,7 +4,7 @@ class SubscriberLog {
     }
 
     update(hour, value) {
-        this.log[hour] = value
+        this.log[hour] += value
     }
 
     query(start, end) {
