@@ -52,7 +52,7 @@ class Button extends React.Component{
 }
 ```
 
-As you can see, the first example (imperative) specifies exactly what should happen step by step to change the color of the button. The second example (declarative) simply specifies how you'd like the end state of the button to be after interaction. It does not specifify how to do so; in fact, the "how," which is DOM-manipulation, is explicitly abstracted away from the programmer while using React.
+As you can see, the first example (imperative) specifies exactly what should happen step by step to change the color of the button. The second example (declarative) simply specifies how you'd like the end state of the button to be after interaction. It does not specify dictate how to do so; in fact, the "how," which is DOM-manipulation, is explicitly abstracted away from the programmer while using React.
 
 ### Imperative - Function
 
@@ -78,7 +78,7 @@ Typically, declarative solutions are an abstraction over some imperative impleme
 
 ## More contrasting
 
-1. Declarative programming is the "act of programming in languages that conform to the mental model of the developer rather than the operational model fo the machine."
+1. Declarative programming is the "act of programming in languages that conform to the mental model of the developer rather than the operational model for the machine."
 
 2. Imperative languages "specify explicit manipulation of the computer's internal state" or "specify an explicit sequence of steps to follow."
 
