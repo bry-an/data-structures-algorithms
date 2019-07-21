@@ -5,7 +5,7 @@ The problems contained in folders have been recently reorganized, and include No
 
 ### Please Note 
 
-As I am in the process of reorganizing these algorithms, some of those not contained in a folder bearing their name may not yet be complete per the algorithm's markdown specification. Bear with me as I finish organizing between those complete and those not complete - thanks!
+As I am in the process of reorganizing these algorithms, some of those *not* contained in a folder bearing their name may not yet be complete per the algorithm's markdown specification. Bear with me as I finish organizing between those complete and those not complete - thanks!
 
 ## Contribute
 
