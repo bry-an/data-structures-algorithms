@@ -1,4 +1,4 @@
-# data-structures-algorithms
+# Data Structures and Algorithms
 Data Structures and Algorithm solutions in JS and Python
 
 ## Want to contribute?
