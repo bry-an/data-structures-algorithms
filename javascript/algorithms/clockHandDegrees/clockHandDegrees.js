@@ -23,9 +23,6 @@ const clockHandDegrees = time => {
   return Math.round(hourDegrees - minuteDegrees);
 };
 
-assert.equal(clockHandDegrees("6:00"), 180);
-assert.equal(clockHandDegrees("3:15"), 8);
-
 //bonus: returning answer to floor of nearest minute
 const checkWhenAngleZero = () => {
   let answer = [];
@@ -49,6 +46,8 @@ const checkWhenAngleZero = () => {
   return answer;
 };
 
-const anglesZero = checkWhenAngleZero();
+assert.equal(clockHandDegrees("6:00"), 180);
+assert.equal(clockHandDegrees("3:15"), 8);
 
+const anglesZero = checkWhenAngleZero();
 assert.equal(anglesZero.includes("12:00"), true);

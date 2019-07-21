@@ -1,8 +1,10 @@
+const assert = require("assert");
+
 const binarySearch = (element, array) => {
   let left = 0;
   let right = array.length - 1;
-  let pivot = Math.floor((right + left / 2));
-  let count = 0
+  let pivot = Math.floor(right + left / 2);
+  let count = 0;
 
   while (array[pivot] !== element && left < right) {
     if (array[pivot] < element) {
@@ -13,10 +15,8 @@ const binarySearch = (element, array) => {
     }
     pivot = Math.floor(right + left / 2);
   }
-  for (let i = 0; i < count; i++) {
-      array.unshift(array.pop())
-  }
-  return array[pivot] == element ? pivot : -1;
+  return array[pivot] === element ? pivot : -1;
 };
 
-console.log(binarySearch(4, [3, 4, 6, 8, 2]));
+assert.equal(binarySearch(4, [2, 3, 4, 5, 8]), 2);
+assert.equal(binarySearch(4, [2, 3, 5, 8]), -1);
