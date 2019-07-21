@@ -18,7 +18,6 @@ function findPattern(string, pattern) {
       i = 0;
     }
   }
-  console.log(frequencyArr);
   let results = [];
   for (let i = 0; i < frequencyArr.length; i++) {
     if (frequencyArr[i] === pattern.length) {
@@ -28,5 +27,3 @@ function findPattern(string, pattern) {
   }
   return results;
 }
-
-console.log(findPattern("abracadabra", "abr"));

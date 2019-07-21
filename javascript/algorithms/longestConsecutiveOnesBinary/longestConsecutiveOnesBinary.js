@@ -1,6 +1,6 @@
 const assert = require("assert");
 
-import { decimalToBinary } from "./decimalBinaryConversion";
+import { decimalToBinary } from "../decimalBinaryConversion";
 
 function countConsecutiveOnes(num) {
   const binary = decimalToBinary(num); // convert to binary
