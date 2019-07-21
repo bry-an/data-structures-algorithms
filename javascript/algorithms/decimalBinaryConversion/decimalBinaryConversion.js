@@ -33,4 +33,7 @@ function binaryToDecimal(num) {
 assert.equal(binaryToDecimal(101), 5);
 assert.equal(decimalToBinary(2), 10);
 
-module.exports = { decimalToBinary, binaryToDecimal };
+export default {
+  decimalToBinary,
+  binaryToDecimal
+};

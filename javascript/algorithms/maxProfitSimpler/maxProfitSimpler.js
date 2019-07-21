@@ -7,20 +7,22 @@
 // then we can always discard x. So, if we keep track of the highest price in the future for each variable,
 // we can immediately find how much profit buying at that price can make.
 
+const assert = require("assert");
+
 const maxProfitSimpler = arr => {
-  let currentMax = 0
-  let maxProfit = 0
-  let reversedArr = arr.reverse()
+  let currentMax = 0;
+  let maxProfit = 0;
+  let reversedArr = arr.reverse();
 
   for (let i = 0; i < reversedArr.length; i++) {
     if (reversedArr[i] > currentMax) {
-      currentMax = reversedArr[i]
+      currentMax = reversedArr[i];
     }
-    let potentialProfit = currentMax - reversedArr[i]
+    let potentialProfit = currentMax - reversedArr[i];
     if (potentialProfit > maxProfit) {
-      maxProfit = potentialProfit
+      maxProfit = potentialProfit;
     }
   }
-  return maxProfit
-}
-console.log(maxProfitSimpler([9, 11, 8, 5, 7, 10]))
+  return maxProfit;
+};
+assert.equal(maxProfitSimpler([9, 11, 8, 5, 7, 10]), 5);

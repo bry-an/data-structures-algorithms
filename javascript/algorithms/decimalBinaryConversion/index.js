@@ -1,3 +1,4 @@
-import conversion from "./decimalBinaryConversion";
+import conversions from "./decimalBinaryConversion";
 
-export default conversion;
+export const decimalToBinary = conversions.decimalToBinary;
+export const binaryToDecimal = conversions.binaryToDecimal;
