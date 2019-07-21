@@ -1,7 +1,11 @@
 # JavaScript Algorithms
 
 This is a collection of JavaScript algorithm challenges. The sources vary, however many of the problems are from [Daily Coding Problem](https://www.dailycodingproblem.com/).  
-The problems contained in folders have been recently reorganized, and include Node assertions that you can pull down and run for yourself. Feel free to add additional assertions to test the algorithms. Please Note: As I am in the process of reorganizing these algorithms, some of those not contained in a folder bearing their name may not yet be complete per the algorithm's markdown specification. Bear with me as I finish organizing between those complete and those not complete - thanks!
+The problems contained in folders have been recently reorganized, and include Node assertions that you can pull down and run for yourself. Feel free to add additional assertions to test the algorithms. 
+
+### Please Note 
+
+As I am in the process of reorganizing these algorithms, some of those not contained in a folder bearing their name may not yet be complete per the algorithm's markdown specification. Bear with me as I finish organizing between those complete and those not complete - thanks!
 
 ## Contribute
 
