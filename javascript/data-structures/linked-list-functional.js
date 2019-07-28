@@ -34,6 +34,23 @@ const listBuilder = function () {
     return cell(head, listBuilder.apply(null, tail));
 }
 
+const removeElement = (list, element) => {
+    if (list.isEmpty) return;
+    if (list.head === element) {
+        if (list.tail.isEmpty) {
+            return Nil
+        }
+        const head = list.tail.head;
+        const tail = list.tail.tail;
+        return cell(head, tail)
+    }
+    return cell(list.head, removeElement(list.tail, element));
+}
+
+const anotherList = listBuilder(1, 2, 3);
+anotherList
+removeElement(anotherList, 3) //?
+
 
 // some common methods to play with the lists
 
@@ -56,22 +73,39 @@ const print = (accum, curr) => {
     return accum
 }
 
+
+// some list methods
+const getLength = list => {
+    return reduce(list, (accum) => accum + 1, 0)
+}
+
+const has = (list, element) => {
+    if (list.isEmpty) return false;
+    if (list.head === element) return true;
+
+    return has(list.tail, element)
+}
+
+
+
 // sample callbacks
 const double = element => element * 2;
 const sum = (accum, curr) => accum + curr
 
 // tests
-const testList = listBuilder(1, 2, 3, 4, 5)
+const testList = listBuilder(1, 2, 3, 4, 5);
+assert.equal(has(testList, 1), true);
+assert.equal(getLength(testList), 5);
 
-const testListArray = reduce(testList, print, [])
-assert.deepEqual(testListArray, [1, 2, 3, 4, 5])
+const testListArray = reduce(testList, print, []);
+assert.deepEqual(testListArray, [1, 2, 3, 4, 5]);
 
-const testMap = map(testList, double)
-const testMapArray = reduce(testMap, print, [])
-assert.deepEqual(testMapArray, [2, 4, 6, 8, 10])
+const testMap = map(testList, double);
+const testMapArray = reduce(testMap, print, []);
+assert.deepEqual(testMapArray, [2, 4, 6, 8, 10]);
 
-const testReduce = reduce(testList, sum, 0)
-assert.equal(testReduce, 15)
+const testReduce = reduce(testList, sum, 0);
+assert.equal(testReduce, 15);
 
 
 
