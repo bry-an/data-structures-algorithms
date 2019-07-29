@@ -7,6 +7,10 @@ function oneEdit(string1, string2) {
   const str2Arr = string2.split("");
   let result = "";
 
+  if (string1 === string2) {
+    return "The two strings are identical";
+  }
+
   // if the the difference between the two strings' lengths is one, we know that an insertion must take place
   if (str1Len + 1 === str2Len || str1Len - 1 === str2Len) {
     str1Len > str2Len
@@ -22,12 +26,11 @@ function oneEdit(string1, string2) {
     // if anything else, the strings are the same length but are more than one edit apart
     if (result.length === 2) {
       return `Swap ${result[0]} and ${result[1]}`;
-    } else if (result.length === 0 && string1 === string2) {
-      return "The two strings are identical";
-    } else return "The two strings are greater than one edit apart";
+    }
+    return "The two strings are greater than one edit apart";
   }
   // if their lengths are greater than 1 character apart, oneEdit function returns 'false'
-  else return "The two strings are greater than one edit apart";
+  return "The two strings are greater than one edit apart";
 }
 
 function findExtraCharacter(longer, shorter) {
