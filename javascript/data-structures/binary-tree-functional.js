@@ -39,13 +39,12 @@ const addElement = (tree, element) => {
   return;
 };
 
-const treebuilder = (elements, tree = Nil, index = 0) => {
-
-  if (!elements || !elements[index]) {
+const treebuilder = (elements, tree = Nil) => {
+  if (!elements[0]) {
     return tree
   }
 
-  return treebuilder(elements, addElement(tree, elements[index]), index + 1)
+  return treebuilder(elements.slice(1), addElement(tree, elements[0]))
 }
 
 
@@ -72,7 +71,7 @@ const search = (tree, element) => {
 assert.equal(
   search(
     treebuilder([5, 8, 21, 15, 4]),
-    8
+    5
   ),
   true
 );
