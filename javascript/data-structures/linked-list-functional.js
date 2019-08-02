@@ -1,6 +1,6 @@
 const assert = require("assert");
 
-const Cons = function(head, tail) {
+const Cons = function (head, tail) {
   this.head = head;
   this.tail = tail;
 };
@@ -25,7 +25,7 @@ const cell = (head, tail) => {
 };
 
 // helper to build larger lists
-const listBuilder = function() {
+const listBuilder = function () {
   if (arguments.length === 0) {
     return Nil;
   }
@@ -112,37 +112,88 @@ const double = element => element * 2;
 const sum = (accum, curr) => accum + curr;
 
 //test list
-const testList = listBuilder(1, 2, 3, 4, 5);
-assert.equal(has(testList, 1), true);
-assert.equal(getLength(testList), 5);
+assert.equal(
+  has(
+    listBuilder(1, 2, 3, 4, 5),
+    1
+  ),
+  true
+);
+
+assert.equal(
+  getLength(
+    listBuilder(1, 2, 3, 4, 5)),
+  5
+);
 
 // test get
-// testList = 1, 2, 3, 4, 5
-assert.equal(get(testList, 1), 2);
+assert.equal(
+  get(
+    listBuilder(1, 2, 3, 4, 5),
+    1
+  ),
+  2
+);
 
 // test indexOf
-// testList = 1, 2, 3, 4, 5
-assert.equal(indexOf(testList, 3), 2);
+assert.equal(
+  indexOf(
+    listBuilder(1, 2, 3, 4, 5),
+    3
+  ),
+  2
+);
 
 //test has
-const testHas = has(testList, 1);
-assert.equal(testHas, true);
+assert.equal(
+  has(
+    listBuilder(1, 2, 3, 4, 5),
+    1
+  ),
+  true
+);
 
 // test map
-const testMap = map(testList, double);
-const testMapArray = reduce(testMap, print, []);
-assert.deepEqual(testMapArray, [2, 4, 6, 8, 10]);
+assert.deepEqual(
+  reduce(
+    map(
+      listBuilder(1, 2, 3, 4, 5),
+      double),
+    print,
+    []
+  ),
+  [2, 4, 6, 8, 10]
+);
 
 //test reduce
-const testReduce = reduce(testList, sum, 0); // testList: 1, 2, 3, 4, 5
-assert.equal(testReduce, 15);
+assert.equal(
+  reduce(
+    listBuilder(1, 2, 3, 4, 5),
+    sum,
+    0
+  ),
+  15
+);
 
 // test addElement
-const testList2 = listBuilder(1, 2, 3);
-const testAddList = addElement(testList2, 4);
-assert.equal(has(testAddList, 4), true);
+assert.equal(
+  has(
+    addElement(
+      listBuilder(1, 2, 3),
+      4),
+    4
+  ),
+  true
+);
 
 // test removeElement
-const testRemoveList = removeElement(testList2, 2);
-const testRemoveArray = reduce(testRemoveList, print, []);
-assert.deepEqual(testRemoveArray, [1, 3]);
+assert.deepEqual(
+  reduce(
+    removeElement(
+      listBuilder(1, 2, 3),
+      2),
+    print,
+    []
+  ),
+  [1, 3]
+);

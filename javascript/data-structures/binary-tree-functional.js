@@ -69,9 +69,21 @@ const search = (tree, element) => {
 
 
 // tests
-const evergreen = treebuilder([5, 8, 21, 15, 4])
-assert.equal(search(evergreen, 8), true)
-assert.equal(search(evergreen), false)
+assert.equal(
+  search(
+    treebuilder([5, 8, 21, 15, 4]),
+    8
+  ),
+  true
+);
+
+assert.equal(
+  search(
+    treebuilder([5, 8, 21, 15, 4]),
+    7
+  ),
+  false
+)
 
 
 
