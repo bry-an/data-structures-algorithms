@@ -20,7 +20,7 @@ const Nil = {
 };
 
 // a helper function to create lists
-const cell = function(head, tail) {
+const cell = (head, tail) => {
   return new Cons(head, tail);
 };
 
@@ -57,14 +57,14 @@ const removeElement = (list, element) => {
 // some common methods to play with the lists
 
 // map
-const map = function(list, fn) {
+const map = (list, fn) => {
   if (list.isEmpty) return list;
 
   return cell(fn(list.head), map(list.tail, fn));
 };
 
 // reduce
-const reduce = function(list, fn, accum) {
+const reduce = (list, fn, accum) => {
   if (list.isEmpty) return accum;
   return reduce(list.tail, fn, fn(accum, list.head));
 };
@@ -87,6 +87,15 @@ const has = (list, element) => {
   return has(list.tail, element);
 };
 
+const get = (list, index, count) => {
+  count = count || 0;
+
+  if (count === index) {
+    return list.head;
+  }
+  return get(list.tail, index, count + 1);
+};
+
 // tests
 
 // sample callbacks
@@ -98,6 +107,10 @@ const testList = listBuilder(1, 2, 3, 4, 5);
 assert.equal(has(testList, 1), true);
 assert.equal(getLength(testList), 5);
 
+// test get
+// testList = 1, 2, 3, 4, 5
+assert.equal(get(testList, 1), 2);
+
 //test has
 const testHas = has(testList, 1);
 assert.equal(testHas, true);
@@ -108,7 +121,7 @@ const testMapArray = reduce(testMap, print, []);
 assert.deepEqual(testMapArray, [2, 4, 6, 8, 10]);
 
 //test reduce
-const testReduce = reduce(testList, sum, 0);
+const testReduce = reduce(testList, sum, 0); // testList: 1, 2, 3, 4, 5
 assert.equal(testReduce, 15);
 
 // test addElement
