@@ -88,6 +88,7 @@ const has = (list, element) => {
 };
 
 const get = (list, index, count) => {
+  if (list.isEmpty) return -1;
   count = count || 0;
 
   if (count === index) {
@@ -95,6 +96,15 @@ const get = (list, index, count) => {
   }
   return get(list.tail, index, count + 1);
 };
+
+const indexOf = (list, element, index = 0) => {
+  if (list.isEmpty) return -1;
+  if (list.head === element) {
+    return index;
+  }
+  return indexOf(list.tail, element, index + 1);
+};
+const testList7 = listBuilder(1, 2, 3, 4, 5);
 
 // tests
 
@@ -110,6 +120,10 @@ assert.equal(getLength(testList), 5);
 // test get
 // testList = 1, 2, 3, 4, 5
 assert.equal(get(testList, 1), 2);
+
+// test indexOf
+// testList = 1, 2, 3, 4, 5
+assert.equal(indexOf(testList, 3), 2);
 
 //test has
 const testHas = has(testList, 1);
