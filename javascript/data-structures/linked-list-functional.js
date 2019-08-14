@@ -104,7 +104,6 @@ const indexOf = (list, element, index = 0) => {
   }
   return indexOf(list.tail, element, index + 1);
 };
-const testList7 = listBuilder(1, 2, 3, 4, 5);
 
 // tests
 
