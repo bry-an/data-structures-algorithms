@@ -105,7 +105,7 @@ const indexOf = (list, element, index = 0) => {
   return indexOf(list.tail, element, index + 1);
 };
 
-// tests
+//tests
 
 // sample callbacks
 const double = element => element * 2;
