@@ -1,5 +1,3 @@
-This is your coding interview problem for today.
-
 This problem was asked by Triplebyte.
 
 Implement a data structure which carries out the following operations without resizing the underlying array:

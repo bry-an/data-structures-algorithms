@@ -1,6 +1,6 @@
 const assert = require("assert");
 
-const Cons = function(head, left, right) {
+const Cons = function (head, left, right) {
   this.head = head;
   this.left = left;
   this.right = right;
@@ -22,9 +22,6 @@ const Nil = {
   }
 };
 
-const getHead = tree => {
-  return tree.head;
-};
 const cell = (head, left, right) => {
   return new Cons(head, left, right);
 };
@@ -42,10 +39,55 @@ const addElement = (tree, element) => {
   return;
 };
 
-const myTree = cell(5, Nil, Nil);
+const treebuilder = (elements, tree = Nil) => {
+  if (!elements[0]) {
+    return tree
+  }
 
-const newTree = addElement(myTree, 6); //?
-const anotherTree = addElement(newTree, 4); //?
-addElement(anotherTree, 7); //?
+  return treebuilder(elements.slice(1), addElement(tree, elements[0]))
+}
+
+
+const search = (tree, element) => {
+  if (!tree || tree.isEmpty) {
+    return false
+  }
+  if (tree.head === element) {
+    return true
+  }
+  if (tree.head > element) {
+    return search(tree.left, element)
+  }
+  else {
+    return search(tree.right, element)
+  }
+
+  return false
+}
+
+
 
 // tests
+assert.equal(
+  search(
+    treebuilder([5, 8, 21, 15, 4]),
+    5
+  ),
+  true
+);
+
+assert.equal(
+  search(
+    treebuilder([5, 8, 21, 15, 4]),
+    7
+  ),
+  false
+)
+
+
+
+
+
+
+
+
