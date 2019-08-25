@@ -44,6 +44,9 @@ const closestDistance = arr => {
   return minPoints;
 };
 
+// since JS does not allow parentheses to delineate points, am converting each point to a string including parentheses then parsing that string
+// Thus this problem included string parsing. To eliminate this necessity, convert each input point to an {x: Number, y: Number} object.
+
 assert.deepEqual(
   closestDistance([
     "(1, 1)",
