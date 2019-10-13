@@ -55,7 +55,7 @@ const addElement = (tree, element) => {
 
 const treebuilder = (elements, tree = Nil) => {
   if (!elements[0]) {
-    return tree
+    return tree;
   }
 
   return treebuilder(
@@ -67,44 +67,37 @@ const treebuilder = (elements, tree = Nil) => {
 
 const search = (tree, element) => {
   if (!tree || tree.isEmpty) {
-    return false
+    return false;
   }
   if (tree.head === element) {
-    return true
+    return true;
   }
   if (tree.head > element) {
-    return search(tree.left, element)
+    return search(tree.left, element);
+  } else {
+    return search(tree.right, element);
   }
-  else {
-    return search(tree.right, element)
+
+  return false;
+};
+
+const print = (tree, elements = []) => {
+  if (!tree.left.isEmpty) {
+    return print(tree.left, elements);
   }
+  if (!tree.right.isEmpty) {
+    return print(tree.right, elements);
+  }
+  if (tree.left.isEmpty && tree.right.isEmpty) {
+    elements.push(tree.head);
+    return elements;
+  }
+};
+const myTree = treebuilder([5, 2, 7, 4, 9]); //?
 
-  return false
-}
-
-
+print(myTree); //?
 
 // tests
-assert.equal(
-  search(
-    treebuilder([5, 8, 21, 15, 4]),
-    5
-  ),
-  true
-);
+assert.equal(search(treebuilder([5, 8, 21, 15, 4]), 5), true);
 
-assert.equal(
-  search(
-    treebuilder([5, 8, 21, 15, 4]),
-    7
-  ),
-  false
-)
-
-
-
-
-
-
-
-
+assert.equal(search(treebuilder([5, 8, 21, 15, 4]), 7), false);
