@@ -31,10 +31,24 @@ const addElement = (tree, element) => {
     return cell(element, Nil, Nil);
   }
   if (element > tree.head) {
-    return cell(tree.head, tree.left, addElement(tree.right, element));
+    return cell(
+      tree.head,
+      tree.left,
+      addElement(
+        tree.right,
+        element
+      )
+    );
   }
   if (element < tree.head) {
-    return cell(tree.head, addElement(tree.left, element), tree.right);
+    return cell(
+      tree.head,
+      addElement(
+        tree.left,
+        element
+      ),
+      tree.right
+    );
   }
   return;
 };
@@ -44,7 +58,10 @@ const treebuilder = (elements, tree = Nil) => {
     return tree
   }
 
-  return treebuilder(elements.slice(1), addElement(tree, elements[0]))
+  return treebuilder(
+    elements.slice(1),
+    addElement(tree, elements[0])
+  )
 }
 
 
