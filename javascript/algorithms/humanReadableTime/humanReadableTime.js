@@ -19,7 +19,7 @@ const calcHours = secondsInput => {
 const humanReadable = secondsInput => {
 
     if (secondsInput < 60) {
-        return calcSeconds(secondsInput)
+        return `00:00:${calcSeconds(secondsInput)}`
     }
     if (secondsInput < 3600) {
         return `00:${format(calcMinutes(secondsInput))}:${format(calcSeconds(secondsInput))}`
@@ -28,9 +28,7 @@ const humanReadable = secondsInput => {
 
 }
 
-humanReadable(3601) //?
-
-// assert.equal(humanReadable(5), '00:00:05', 'humanReadable(5)');
-// assert.equal(humanReadable(60), '00:01:00', 'humanReadable(60)');
-// assert.equal(humanReadable(86399), '23:59:59', 'humanReadable(86399)');
-// assert.equal(humanReadable(359999), '99:59:59', 'humanReadable(359999)');
+assert.equal(humanReadable(5), '00:00:05');
+assert.equal(humanReadable(60), '00:01:00', 'humanReadable(60)');
+assert.equal(humanReadable(86399), '23:59:59', 'humanReadable(86399)');
+assert.equal(humanReadable(359999), '99:59:59', 'humanReadable(359999)');
