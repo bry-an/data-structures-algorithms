@@ -1,3 +1,4 @@
+const assert = require('assert')
 
 // using forEach
 const countWords = string => {
@@ -11,7 +12,6 @@ const countWords = string => {
     })
     return wordMap
 }
-countWords("give a little get a little") //?
 
 // using recursion (functional approach)
 const countWordsRecur = (string, wordMap = {}) => {
@@ -22,4 +22,6 @@ const countWordsRecur = (string, wordMap = {}) => {
 
     return countWordsRecur(string.split(' ').slice(1).join(' '), wordMap)
 }
-countWordsRecur("give a little get a little") //?
+
+
+assert.deepEqual(countWordsRecur("give a little get a little"), {give: 1, a: 2, little: 2, get: 1})
