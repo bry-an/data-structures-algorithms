@@ -13,6 +13,8 @@ module.exports = {
         "no-console": "off",
     },
     "env": {
-        "es6": true
+        "es6": true,
+	"browser": true,
+	"node": true,
     }
 }
