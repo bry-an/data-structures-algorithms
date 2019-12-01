@@ -22,11 +22,11 @@ const medianWindow = (arr, k, test = false) => {
     const testArray = [];
     arr.forEach((number, i) => {
         if (i + k <= arr.length) {
-            const arrayOfInterest = arr.slice(i, i+k);
+            const subset = arr.slice(i, i+k);
             if (!test) {
-                returnString += `${median(arrayOfInterest)} <- median of ${arrayOfInterest} \n`;
+                returnString += `${median(subset)} <- median of ${subset} \n`;
             } else {
-                testArray[i] = [median(arrayOfInterest), ...arrayOfInterest];
+                testArray[i] = [median(subset), ...subset];
             }
         }
     });
