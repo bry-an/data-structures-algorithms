@@ -53,7 +53,7 @@ const findSubstring = (string, substring) => {
         }
         return recurse(string.slice(1), substring, ++startInd, ++endInd);
     };
-    return  recurse(string, substring);
+    return recurse(string, substring);
 };
 
 
