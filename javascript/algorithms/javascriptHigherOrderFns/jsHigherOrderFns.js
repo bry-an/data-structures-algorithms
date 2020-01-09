@@ -20,7 +20,7 @@ const some = (arr, fn) => {
     if (!arr.length) {
         return false;
     }
-    return fn(arr[0]) ? true : some(arr.slice(1), fn);
+    return fn(arr[0]) || some(arr.slice(1), fn);
 };
 
 const map = (arr, fn, returnArr = []) => {

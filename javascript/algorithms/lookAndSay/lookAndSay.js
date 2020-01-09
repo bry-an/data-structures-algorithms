@@ -25,7 +25,7 @@ const lookAndSay = (count, num = 1) => {
         currentChar = char;
     });
     returnString = returnString.concat(currentCount).concat(currentChar);
-    return lookAndSay(count, parseInt(returnString));
+    return lookAndSay(count, parseFloat(returnString));
 };
 
 assert.deepEqual(lookAndSay(1), 1);
