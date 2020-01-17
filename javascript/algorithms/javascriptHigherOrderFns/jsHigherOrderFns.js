@@ -12,8 +12,7 @@ const forEach = (arr, fn) => {
     if (!arr.length) {
         return;
     }
-    const fnVal = fn(arr[0]);
-    return fnVal || forEach(arr.slice(1), fn);
+    return fn(arr[0]) || forEach(arr.slice(1), fn);
 };
 
 const some = (arr, fn) => {
