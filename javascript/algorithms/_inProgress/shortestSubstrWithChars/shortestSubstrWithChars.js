@@ -1,13 +1,8 @@
-// create local copy of set
-// iterate over string
-// if character is in set, add to return string and remove from set
-// when set length is zero, recursively call function on new string
-// if end of string is reached and set length is not zero, return null
-// when return string length is same as input string, return string
+// "figeahaeci"` and the set of characters `{a, e, i}`, you should return `"aeci"`
 
+const assert = require('assert');
 
 const shortestSubstrWithChars = (string, set) => {
-    console.log('executing SSWC with ', string);
     const originalStringLength = string.length;
 
     let substring = '';
@@ -20,7 +15,7 @@ const shortestSubstrWithChars = (string, set) => {
 
     let keepGoing = false;
 
-    string.split('').forEach(char => {
+    string.split('').forEach((char) => {
         if (keepGoing) {
             substring = substring.concat(char);
         }
@@ -47,4 +42,4 @@ exampleSet.add('a');
 exampleSet.add('e');
 exampleSet.add('i');
 
-console.log(shortestSubstrWithChars('figeahaeci', exampleSet));
+assert.deepStrictEqual(shortestSubstrWithChars('figeahaeci', exampleSet), 'aeci');
